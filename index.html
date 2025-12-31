@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>M4 Music | Official Music Label</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="M4 Music is a professional music label promoting original, soulful and powerful music across genres.">
+<meta name="keywords" content="M4 Music, Music Label, Hindi Songs, Romantic Music, Indie Music">
+<meta name="author" content="M4 Music">
+<meta name="robots" content="index, follow">
+
+<!-- Google Indexing -->
+<meta property="og:title" content="M4 Music – Official Music Label">
+<meta property="og:description" content="Feel the Music. Live the Emotion.">
+<meta property="og:type" content="website">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --primary:#8142f5;
+  --bg:#0b0b12;
+  --card:#151525;
+  --text:#ffffff;
+  --muted:#b3b3c9;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:var(--bg);color:var(--text);overflow-x:hidden;}
+
+section{padding:80px 6%;}
+h1,h2,h3{font-weight:700;}
+p{color:var(--muted);line-height:1.7;}
+
+.btn{
+  padding:14px 30px;
+  background:var(--primary);
+  color:white;
+  border-radius:30px;
+  text-decoration:none;
+  display:inline-block;
+  margin-top:20px;
+  box-shadow:0 0 30px rgba(129,66,245,.4);
+}
+
+header{
+  position:fixed;
+  top:0;left:0;
+  width:100%;
+  padding:18px 6%;
+  background:rgba(11,11,18,.8);
+  backdrop-filter:blur(10px);
+  z-index:999;
+}
+
+header h2{color:var(--primary);}
+
+.hero{
+  padding-top:140px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  gap:40px;
+}
+
+.hero h1{
+  font-size:48px;
+}
+.hero span{color:var(--primary);}
+
+.hero video{
+  width:100%;
+  background:black;
+  object-fit:contain;
+  border-radius:20px;
+}
+
+/* About */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:25px;
+}
+
+.card{
+  background:var(--card);
+  padding:30px;
+  border-radius:20px;
+  transition:.3s;
+}
+.card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 0 40px rgba(129,66,245,.25);
+}
+
+/* Counter */
+.counter{
+  font-size:52px;
+  color:var(--primary);
+  font-weight:700;
+}
+
+/* Form */
+form input,form textarea{
+  width:100%;
+  padding:14px;
+  margin-bottom:15px;
+  border-radius:10px;
+  border:none;
+  background:#0f0f1c;
+  color:white;
+}
+
+/* Footer */
+footer{
+  background:#07070d;
+  padding:30px;
+  text-align:center;
+  color:var(--muted);
+}
+
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;}
+  .hero h1{font-size:36px;}
+}
+  .top-header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  padding:16px 6%;
+  background:rgba(11,11,18,.85);
+  backdrop-filter:blur(10px);
+  z-index:999;
+  display:flex;
+  align-items:center;
+}
+
+.logo{
+  height:42px;
+  width:auto;
+}
+  .video-card img{
+  width:100%;
+  border-radius:15px;
+}
+.video-card h4{
+  margin-top:10px;
+  font-size:16px;
+}
+.video-card{
+  background:var(--card);
+  padding:20px;
+  border-radius:20px;
+  cursor:pointer;
+  transition:.3s;
+}
+.video-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 0 30px rgba(129,66,245,.3);
+}
+
+
+</style>
+</head>
+
+<body>
+
+<header class="top-header">
+  <img src="logo.png" alt="M4 Music Logo" class="logo">
+</header>
+
+<section class="hero">
+  <div>
+    <h1>Powerful <span>Music Label</span><br>For New Talent</h1>
+    <p>Feel the Music. Live the Emotion.</p>
+    <video src="intro-logo.mp4" autoplay muted loop playsinline></video>
+<section>
+  <h2>YouTube Subscribers</h2>
+  <div class="counter" id="subCount">Loading...</div>
+  <p>Real-time YouTube subscriber count</p>
+</section>
+    <a href="https://www.youtube.com/@M4Music-Official" class="btn">Visit YouTube</a>
+  </div>
+  
+</section>
+  
+  
+<section>
+
+    <h2>Latest Releases</h2>
+  <div class="cards" id="latestVideos"></div>
+</section>
+<section>
+  <h2>Official Playlists</h2>
+  <div class="cards" id="playlistSection"></div>
+</section>
+
+<section>
+  <h2>About M4 Music</h2>
+  <p>M4 Music is a professional music label dedicated to promoting original voices, soulful compositions, and emotionally powerful music.</p>
+</section>
+
+<section>
+  <h2>Why M4 Music</h2>
+  <div class="cards">
+    <div class="card">🎵 Weekly Releases</div>
+    <div class="card">🎧 Studio Quality</div>
+    <div class="card">❤️ Emotion Driven</div>
+    <div class="card">🌍 Global Vision</div>
+  </div>
+</section>
+
+
+
+<section>
+  <h2>Artist Submission</h2>
+
+  <form id="artistForm">
+    <input type="text" name="name" placeholder="Artist Name" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="text" name="phone" placeholder="Phone">
+    <input type="text" name="genre" placeholder="Genre">
+    <input type="url" name="link" placeholder="YouTube / Drive Link">
+    <textarea name="message" placeholder="Message"></textarea>
+
+    <button type="submit" class="btn">Submit</button>
+
+    <!-- STATUS MESSAGE (VERY IMPORTANT) -->
+    <p id="formStatus"></p>
+  </form>
+</section>
+
+
+<section>
+  <h2>Founder & CEO</h2>
+  <div class="card">
+    <h3>Tafajjul Ansari</h3>
+    <p>Founder & CEO – M4 Music</p>
+    <p>Building a powerful independent music label for new talent.</p>
+  </div>
+</section>
+
+<footer>
+© 2025 M4 Music • Feel the Music. Live the Emotion.
+</footer>
+
+
+  <script>
+const API_KEY = "AIzaSyDOi7MuTyqjfieHKGahj0VBcGpxei9dZTQ";
+const CHANNEL_ID = "UCBvUdk2o8QR9-3jXdhEe6mw";
+
+async function getSubscribers(){
+  try{
+    const res = await fetch(
+      `https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${CHANNEL_ID}&key=${API_KEY}`
+    );
+    const data = await res.json();
+    const subs = data.items[0].statistics.subscriberCount;
+    animateCounter(subs);
+  }catch(e){
+    document.getElementById("subCount").innerText = "Unavailable";
+  }
+}
+
+function animateCounter(target){
+  let count = 0;
+  const speed = target / 100;
+
+  const interval = setInterval(()=>{
+    count += Math.ceil(speed);
+    if(count >= target){
+      count = target;
+      clearInterval(interval);
+    }
+    document.getElementById("subCount").innerText =
+      count.toLocaleString();
+  }, 30);
+}
+
+// Auto refresh every 60 seconds
+getSubscribers();
+setInterval(getSubscribers, 60000);
+  // ---------- LATEST VIDEOS ----------
+async function loadLatestVideos() {
+  try {
+    const url =
+      `https://www.googleapis.com/youtube/v3/search` +
+      `?key=${API_KEY}` +
+      `&channelId=${CHANNEL_ID}` +
+      `&part=snippet` +
+      `&order=date` +
+      `&maxResults=6` +
+      `&type=video`;
+
+    const res = await fetch(url);
+    const data = await res.json();
+
+    if (!data.items) {
+      document.getElementById("latestVideos").innerHTML =
+        "<p>Videos not available</p>";
+      return;
+    }
+
+    const container = document.getElementById("latestVideos");
+    container.innerHTML = "";
+
+    data.items.forEach(item => {
+      const videoId = item.id.videoId;
+      const thumb = item.snippet.thumbnails.high.url;
+      const title = item.snippet.title;
+
+      container.innerHTML += `
+        <div class="video-card" onclick="openVideo('${videoId}')">
+          <img src="${thumb}">
+          <h4>${title}</h4>
+        </div>`;
+    });
+  } catch (err) {
+    document.getElementById("latestVideos").innerHTML =
+      "<p>Error loading videos</p>";
+  }
+}
+
+// ---------- PLAYLISTS ----------
+async function loadPlaylists() {
+  try {
+    const url =
+      `https://www.googleapis.com/youtube/v3/playlists` +
+      `?key=${API_KEY}` +
+      `&channelId=${CHANNEL_ID}` +
+      `&part=snippet` +
+      `&maxResults=6`;
+
+    const res = await fetch(url);
+    const data = await res.json();
+
+    const container = document.getElementById("playlistSection");
+    container.innerHTML = "";
+
+    data.items.forEach(p => {
+      container.innerHTML += `
+        <div class="video-card" onclick="openPlaylist('${p.id}')">
+          <img src="${p.snippet.thumbnails.high.url}">
+          <h4>${p.snippet.title}</h4>
+        </div>`;
+    });
+  } catch (err) {
+    document.getElementById("playlistSection").innerHTML =
+      "<p>Error loading playlists</p>";
+  }
+}
+
+function openVideo(id) {
+  window.open(`https://www.youtube.com/watch?v=${id}`, "_blank");
+}
+
+function openPlaylist(id) {
+  window.open(`https://www.youtube.com/playlist?list=${id}`, "_blank");
+}
+
+// LOAD ON PAGE START
+loadLatestVideos();
+loadPlaylists();
+  
+  
+
+</script>
+  
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const form = document.getElementById("artistForm");
+  const statusText = document.getElementById("formStatus");
+
+  if (!form) {
+    alert("Form ID galat hai (artistForm nahi mila)");
+    return;
+  }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    statusText.innerText = "⏳ Sending...";
+    statusText.style.color = "orange";
+
+    const data = {
+      name: form.name.value,
+      email: form.email.value,
+      phone: form.phone.value,
+      genre: form.genre.value,
+      link: form.link.value,
+      message: form.message.value
+    };
+
+    fetch("https://script.google.com/macros/s/AKfycbz2uTeTje7JNe7MD6S5IPsXeY8Y4zzgAi4fCH94b8CSOEXb9NNPkeOJY9VSlTGmJvK6/exec", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: { "Content-Type": "application/json" }
+    })
+    .then(res => res.json())
+    .then(() => {
+      statusText.innerText = "✅ Message sent successfully!";
+      statusText.style.color = "green";
+      form.reset();
+    })
+    .catch(err => {
+      statusText.innerText = "❌ Something went wrong!";
+      statusText.style.color = "red";
+      console.error(err);
+    });
+  });
+
+});
+</script>
+
+
+
+
+</body>
+</html>
