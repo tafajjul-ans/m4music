@@ -289,12 +289,7 @@ footer{
 </div>
 
 <!-- Hidden Chat Container -->
-<div id="chat-container">
-  <iframe
-    src="https://www.chatbase.co/chatbot-iframe/ioB_hwLC8-RldMUqV2-6k"
-    frameborder="0">
-  </iframe>
-</div>
+
 <footer>
 © 2025 M4 Music • Feel the Beat.
 </footer>
@@ -465,6 +460,29 @@ function toggleChat() {
   const chat = document.getElementById("chat-container");
   chat.style.display = chat.style.display === "none" ? "block" : "none";
 }
+</script>
+  
+<script>
+(function(){
+  if(!window.chatbase || window.chatbase("getState") !== "initialized"){
+    window.chatbase = (...args) => {
+      if(!window.chatbase.q){ window.chatbase.q = [] }
+      window.chatbase.q.push(args)
+    };
+  }
+  const onLoad = function(){
+    const s = document.createElement("script");
+    s.src = "https://www.chatbase.co/embed.min.js";
+    s.id = "ioB_hwLC8-RldMUqV2-6k";
+    s.defer = true;
+    document.body.appendChild(s);
+  };
+  if(document.readyState === "complete"){
+    onLoad();
+  } else {
+    window.addEventListener("load", onLoad);
+  }
+})();
 </script>
 
 </body>
